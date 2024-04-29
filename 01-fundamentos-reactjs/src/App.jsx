@@ -13,9 +13,9 @@ const posts = [
       role: 'CTO @Pila'
     },
     content: [
-      { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
-      { type: 'paragraph', content: 'Nemo optio ex architecto odio sapiente, quasi porro placeat vitae esse nesciunt eaque expedita, numquam ducimus quae odit ipsa similique minima. Odit.' },
-      { type: 'link', content: 'joao.design/me' },
+      { id: 11, type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+      { id: 12, type: 'paragraph', content: 'Nemo optio ex architecto odio sapiente, quasi porro placeat vitae esse nesciunt eaque expedita, numquam ducimus quae odit ipsa similique minima. Odit.' },
+      { id: 13, type: 'link', content: 'joao.design/me' },
     ],
     publishedAt: new Date('2024-04-25 04:01:23')
   },
@@ -27,9 +27,9 @@ const posts = [
       role: 'CTO @Pila'
     },
     content: [
-      { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
-      { type: 'paragraph', content: 'Nemo optio ex architecto odio sapiente, quasi porro placeat vitae esse nesciunt eaque expedita, numquam ducimus quae odit ipsa similique minima. Odit.' },
-      { type: 'link', content: 'joao.design/me' },
+      { id: 21, type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+      { id: 22, type: 'paragraph', content: 'Nemo optio ex architecto odio sapiente, quasi porro placeat vitae esse nesciunt eaque expedita, numquam ducimus quae odit ipsa similique minima. Odit.' },
+      { id: 23, type: 'link', content: 'joao.design/me' },
     ],
     publishedAt: new Date('2024-04-24 04:01:23')
   }
@@ -46,6 +46,7 @@ export function App() {
           {posts.map(post => {
             return (
               <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
